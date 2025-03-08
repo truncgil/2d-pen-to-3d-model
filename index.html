@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2B'den 3B'ye Dönüştürücü</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <h1>2B Çizimden 3B Model Oluşturucu</h1>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="drawing-area">
+                <h2>2B Çizim Alanı</h2>
+                <canvas id="drawingCanvas"></canvas>
+                <div class="tools">
+                    <button id="clearCanvas">Temizle</button>
+                    <button id="generateModel">3B Model Oluştur</button>
+                    <div class="color-picker">
+                        <label for="penColor">Renk:</label>
+                        <input type="color" id="penColor" value="#000000">
+                    </div>
+                    <div class="pen-size">
+                        <label for="penSize">Kalem Boyutu:</label>
+                        <input type="range" id="penSize" min="1" max="20" value="5">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="model-area">
+                <h2>3B Model Görüntüleme</h2>
+                <div id="modelViewer"></div>
+                <div class="model-controls">
+                    <button id="rotateLeft">Sola Döndür</button>
+                    <button id="rotateRight">Sağa Döndür</button>
+                    <button id="downloadModel">Modeli İndir</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>2B'den 3B'ye Dönüştürücü &copy; 2025</p>
+    </footer>
+
+    <!-- Three.js kütüphanesi -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <!-- Daha eski ve stabilize edilmiş bir sürüm kullanıyoruz -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+    
+    <!-- Tensorflow.js - NeRF uygulaması için gerekli olabilir -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.13.0/dist/tf.min.js"></script>
+    
+    <!-- Uygulama kodları -->
+    <script src="js/drawing.js"></script>
+    <script src="js/model-generator.js"></script>
+    <script src="js/3d-viewer.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
